@@ -1,5 +1,19 @@
 function minDate(dates) {
   //write you code here
+  // let minDate = dates[0];
+  // for (let i = 1; i < dates.length; i++) {
+  //   if (new Date(dates[i]) < new Date(minDate)) {
+  //     minDate = dates[i];
+  //   }
+  // }
+  // return minDate;
+  let minDate = dates[0];
+  dates.forEach(date => {
+    if (new Date(date) < new Date(minDate)) {
+      minDate = date;
+    }
+  });
+  return minDate;
 }
 
 // Do not change the code
@@ -36,5 +50,9 @@ var dates = [
   "2023/03/29",
   "2023/03/30",
 ];
+
+const h1 = document.createElement("h1");
+h1.textContent = `The minimum date is: ${minDate(dates)}`;
+document.body.appendChild(h1);
 
 alert(minDate(dates));
